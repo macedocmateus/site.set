@@ -30,6 +30,7 @@ export const FeatureSection = () => {
             <span className="text-body-tag text-blue-200 bg-blue-400 px-2 py-1 w-fit rounded-sm uppercase">
               Personalizável
             </span>
+
             <h2 className="text-gray-100 text-heading-lg">
               Tenha uma loja online personalizada com a cara da sua marca
             </h2>
@@ -44,7 +45,6 @@ export const FeatureSection = () => {
               </Link>
             </Button>
           </div>
-
           <div className="flex flex-col items-center justify-center w-full">
             <div className="w-full max-w-md overflow-hidden">
               <Image
@@ -52,13 +52,12 @@ export const FeatureSection = () => {
                 alt="Features"
                 width={440}
                 height={330}
-                className="object-cover w-full"
+                className="object-contain w-full"
               />
             </div>
-
             <Button
               asChild
-              className=" w-full gap-2 rounded-full mt-4 md:mt-auto md:hidden "
+              className="w-full gap-2 rounded-full mt-4 md:mt-auto md:hidden"
             >
               <Link href="/criar-loja">
                 Criar loja grátis
