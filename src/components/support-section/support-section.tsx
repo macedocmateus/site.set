@@ -9,8 +9,10 @@ const ptSansCaption = PT_Sans_Caption({
 export const SupportSection = () => {
   return (
     <>
-      <section className="pb-8 md:py-10 bg-gray-500">
-        <div className="container flex flex-col items-center gap-12">
+      <section className="relative pb-8 md:py-10 bg-gray-700">
+        <div className="absolute inset-0 hidden md:block bg-[url('/background-features.svg')] bg-cover bg-center bg-no-repeat opacity-90" />
+
+        <div className="container flex flex-col items-center gap-12 relative">
           <h2
             className={`${ptSansCaption.className} text-balance text-center text-heading-xl text-gray-100`}
           >
@@ -39,7 +41,7 @@ export const SupportSection = () => {
                 Venda de qualquer loja
               </strong>
               <p className="text-body-sm text-gray-200">
-                Não importa a loja, o Site.Set permite que você insera qualquer
+                Não importa a loja, o Site.Set permite que você insira qualquer
                 link de afiliado.
               </p>
             </div>
