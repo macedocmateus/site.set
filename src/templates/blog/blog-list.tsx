@@ -24,7 +24,17 @@ export function BlogList() {
           <Search />
         </div>
       </header>
-      <PostCard />
+      <PostCard
+        title="Transformando seu negócio em uma loja virtual"
+        description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online..."
+        date="20/12/2024"
+        slug="/Transformando"
+        image="/assets/primeiro-post.png"
+        author={{
+          avatar: '/customer-01.png',
+          name: 'Aspen Dokidis',
+        }}
+      />
     </div>
   )
 }
