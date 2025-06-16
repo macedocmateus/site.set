@@ -1,3 +1,4 @@
+import { Avatar } from '@/components/avatar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,9 +15,10 @@ import { useRouter } from 'next/router'
 export default function PostPage() {
   const router = useRouter()
   const slug = router.query.slug as string
-  const post = allPosts.find(post =>
-    post.slug.toLocaleLowerCase().includes(slug.toLocaleLowerCase())
-  )
+  const post = allPosts.find(
+    post => post.slug.toLowerCase() === slug.toLowerCase()
+  )!
+  const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
 
   return (
     <main className="mt-32 text-gray-100">
@@ -44,6 +46,21 @@ export default function PostPage() {
               className="object-cover"
             />
           </figure>
+          <header className="p-4 md:p-6 lg:p-12 pb-0">
+            <h1 className="mb-6 text-balance text-heading-lg md:text-heading-xl lg:text-heading-xl">
+              {post?.title}
+            </h1>
+            <Avatar.container>
+              <Avatar.image src={post?.author.avatar} alt={post?.title} />
+              <Avatar.content>
+                <Avatar.title>{post?.author.name}</Avatar.title>
+                <Avatar.description>
+                  Publicado em <time dateTime={post.date}>{publishedDate}</time>
+                  {publishedDate}
+                </Avatar.description>
+              </Avatar.content>
+            </Avatar.container>
+          </header>
         </article>
       </div>
     </main>
