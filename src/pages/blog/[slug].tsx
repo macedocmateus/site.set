@@ -50,6 +50,7 @@ export default function PostPage() {
             <h1 className="mb-6 text-balance text-heading-lg md:text-heading-xl lg:text-heading-xl">
               {post?.title}
             </h1>
+
             <Avatar.container>
               <Avatar.image src={post?.author.avatar} alt={post?.title} />
               <Avatar.content>
