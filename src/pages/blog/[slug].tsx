@@ -15,9 +15,8 @@ import { useRouter } from 'next/router'
 export default function PostPage() {
   const router = useRouter()
   const slug = router.query.slug as string
-  const post = allPosts.find(
-    post => post.slug.toLowerCase() === slug.toLowerCase()
-  )!
+
+  const post = allPosts.find(post => post.slug.toLowerCase() === slug)!
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
 
   return (
@@ -52,11 +51,15 @@ export default function PostPage() {
             </h1>
 
             <Avatar.container>
-              <Avatar.image src={post?.author.avatar} alt={post?.title} />
+              <Avatar.image
+                src={post?.author.avatar.trimEnd()}
+                alt={post?.title}
+              />
               <Avatar.content>
                 <Avatar.title>{post?.author.name}</Avatar.title>
                 <Avatar.description>
-                  Publicado em <time dateTime={post.date}>{publishedDate}</time>
+                  Publicado em{' '}
+                  <time dateTime={post?.date}>{publishedDate}</time>
                   {publishedDate}
                 </Avatar.description>
               </Avatar.content>
