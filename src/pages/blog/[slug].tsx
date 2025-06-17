@@ -70,7 +70,7 @@ export default function PostPage() {
               </Avatar.container>
             </header>
             <div className="prose prove-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
-              <Markdown content={post.body.raw} />
+              <Markdown content={post?.body.raw} />
             </div>
           </article>
         </div>

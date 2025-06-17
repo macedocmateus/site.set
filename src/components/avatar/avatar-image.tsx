@@ -9,5 +9,14 @@ export const AvatarImage = ({
   height = 40,
   ...rest
 }: AvatarImageProps) => {
-  return <Image {...rest} src={src} alt={alt} width={width} height={height} />
+  return (
+    <Image
+      {...rest}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className="object-cover rounded-full w-10 h-10"
+    />
+  )
 }
