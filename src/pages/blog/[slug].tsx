@@ -42,32 +42,28 @@ export default function PostPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-12">
           <article className="bg-gray-600 rounded-lg overflow-hidden border-gray-400 border-[1px]">
             <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
-              <Image
-                src={post?.image ?? ''}
-                alt={post?.title ?? ''}
-                fill
-                className="object-cover"
-              />
+              <Image src={post?.image ?? ''} alt={post?.title ?? ''} fill />
             </figure>
             <header className="p-4 md:p-6 lg:p-12 pb-0 mt-8 md:mt-12">
               <h1 className="mb-8 text-balance text-heading-lg md:text-heading-xl lg:text-heading-xl">
                 {post?.title}
               </h1>
 
-              <Avatar.container>
-                <Avatar.image
+              <Avatar.Container>
+                <Avatar.Image
                   src={post?.author.avatar.trimEnd()}
                   alt={post?.title}
+                  size="sm"
                 />
-                <Avatar.content>
-                  <Avatar.title>{post?.author.name}</Avatar.title>
-                  <Avatar.description>
+                <Avatar.Content>
+                  <Avatar.Title>{post?.author.name}</Avatar.Title>
+                  <Avatar.Description>
                     Publicado em{' '}
                     <time dateTime={post?.date}>{publishedDate}</time>
                     {publishedDate}
-                  </Avatar.description>
-                </Avatar.content>
-              </Avatar.container>
+                  </Avatar.Description>
+                </Avatar.Content>
+              </Avatar.Container>
             </header>
             <div className="prose prove-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
               <Markdown content={post?.body.raw} />

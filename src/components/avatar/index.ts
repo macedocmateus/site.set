@@ -5,9 +5,9 @@ import { AvatarImage } from './avatar-image'
 import { AvatarTitle } from './avatar-title'
 
 export const Avatar = {
-  container: AvatarContainer,
-  content: AvatarContent,
-  image: AvatarImage,
-  title: AvatarTitle,
-  description: AvatarDescription,
+  Container: AvatarContainer,
+  Content: AvatarContent,
+  Image: AvatarImage,
+  Title: AvatarTitle,
+  Description: AvatarDescription,
 }
