@@ -32,6 +32,12 @@ export const Markdown = ({ content }: ReactMarkdownProps) => {
           <p className="mb-6 leading-relaxed text-gray-200">{children}</p>
         ),
 
+        ul: ({ children }) => (
+          <ul className="list-disc pl-4 mb-6">{children}</ul>
+        ),
+
+        li: ({ children }) => <li className="mb-2">{children}</li>,
+
         strong: ({ children }) => (
           <strong className="font-extrabold text-gray-100">{children}</strong>
         ),
