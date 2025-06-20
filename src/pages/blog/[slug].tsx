@@ -8,6 +8,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
+import { useShare } from '@/hooks'
 
 import { allPosts } from 'contentlayer/generated'
 import Image from 'next/image'
@@ -20,6 +21,14 @@ export default function PostPage() {
 
   const post = allPosts.find(post => post.slug.toLowerCase() === slug)!
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
+
+  const postUrl = `https://site.set/blog/${slug}`
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post?.title,
+    text: post?.description,
+  })
 
   return (
     <main className="mt-32 text-gray-100">
@@ -77,16 +86,15 @@ export default function PostPage() {
                 Compartilhar
               </h2>
               <div className="space-y-3">
-                {[
-                  { key: '1', providerName: 'Linkedin' },
-                  { key: '2', providerName: 'Facebook' },
-                ].map(provider => (
+                {shareButtons.map(provider => (
                   <Button
-                    key={provider.key}
+                    key={provider.provider}
+                    onClick={() => provider.action()}
                     variant="outline"
                     className="w-full justify-start gap-2"
                   >
-                    {provider.providerName}
+                    {provider.icon}
+                    {provider.name}
                   </Button>
                 ))}
               </div>
