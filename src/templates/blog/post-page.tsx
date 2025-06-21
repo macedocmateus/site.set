@@ -10,19 +10,17 @@ import {
 import { Button } from '@/components/ui/button'
 import { useShare } from '@/hooks'
 
-import { allPosts } from 'contentlayer/generated'
+import type { Post } from 'contentlayer/generated'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
-export const PostPage = () => {
-  const router = useRouter()
-  const slug = router.query.slug as string
+export type PostPageProps = {
+  post: Post
+}
 
-  const post = allPosts.find(post => post.slug.toLowerCase() === slug)!
+export const PostPage = ({ post }: PostPageProps) => {
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
-
-  const postUrl = `https://site.set/blog/${slug}`
+  const postUrl = `https://site.set/blog/${post.slug}`
 
   const { shareButtons } = useShare({
     url: postUrl,

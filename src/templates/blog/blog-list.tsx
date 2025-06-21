@@ -24,7 +24,7 @@ export function BlogList({ posts }: BlogListProps) {
 
   // simulando um array vazio ou seja, sem posts
   // const posts: Post[] = []
-  const hasPosts = posts.length > 0
+  const hasPosts = postList.length > 0
 
   return (
     <div className="flex flex-col py-24 flex-grow h-full">
