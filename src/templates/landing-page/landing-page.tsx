@@ -13,7 +13,6 @@ export const LadingPage = () => {
       <FeatureSection />
       <SupportSection />
       <CustomerStorySection />
-      <CallToAction />
     </article>
   )
 }
