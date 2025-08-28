@@ -1,4 +1,5 @@
-import { useState, useCallback, useEffect } from 'react'
+'use client'
+import { useCallback, useEffect, useState } from 'react'
 
 type UseClipboardProps = {
   timeout?: number

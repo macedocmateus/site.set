@@ -1,3 +1,4 @@
+'use client'
 import { BlogList, type BlogListProps } from '@/templates/blog'
 import { allPosts } from 'contentlayer/generated'
 import type { GetStaticProps } from 'next'
